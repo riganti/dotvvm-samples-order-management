@@ -1,0 +1,35 @@
+﻿@viewModel OrderManagementApp.ViewModels.DefaultViewModel, OrderManagementApp
+@masterPage Views/Site.dotmaster
+
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <h1>
+        <span class="glyphicon glyphicon-book"></span>
+        Manage Orders
+    </h1>
+
+    <dot:GridView DataSource="{value: Orders}" class="table table-striped table-bordered">
+        <dot:GridViewTextColumn HeaderText="Id" ValueBinding="{value: Id}" />
+        <dot:GridViewTextColumn HeaderText="CreatedDate" ValueBinding="{value: CreatedDate}" FormatString="d" />
+        
+        <dot:GridViewTemplateColumn HeaderText="E-mail Address">
+            <a href="{value: "mailto:" + ContactEmail}">{{value: ContactEmail}}</a>
+        </dot:GridViewTemplateColumn>
+        
+        <dot:GridViewTextColumn HeaderText="Items" ValueBinding="{value: ItemsCount}" />
+        <dot:GridViewTextColumn HeaderText="Total Price" ValueBinding="{value: TotalPrice}" FormatString="c" />
+
+        <dot:GridViewTemplateColumn>
+            <dot:RouteLink RouteName="OrderDetail" Param-Id="{value: Id}">
+                <span class="glyphicon glyphicon-pencil"></span>
+                Edit
+            </dot:RouteLink>
+        </dot:GridViewTemplateColumn>
+    </dot:GridView>
+
+    <div class="text-center">
+        <dot:DataPager class="pagination" DataSet="{value: Orders}" />
+    </div>
+
+</dot:Content>
+
