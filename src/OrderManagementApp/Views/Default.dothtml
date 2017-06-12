@@ -33,3 +33,11 @@
 
 </dot:Content>
 
+<dot:Content ContentPlaceHolderID="ScriptContent" RenderSettings.Mode="Server">
+    <dot:RequiredResource Name="default" />
+</dot:Content>
+
+
+
+
+

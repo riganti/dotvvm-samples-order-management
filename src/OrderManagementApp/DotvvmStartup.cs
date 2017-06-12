@@ -1,5 +1,6 @@
 using DotVVM.Framework;
 using DotVVM.Framework.Configuration;
+using DotVVM.Framework.ResourceManagement;
 using DotVVM.Framework.Routing;
 
 namespace OrderManagementApp
@@ -31,6 +32,8 @@ namespace OrderManagementApp
         private void ConfigureResources(DotvvmConfiguration config, string applicationPath)
         {
             // register custom resources and adjust paths to the built-in resources
+            config.Resources.Register("default", new StylesheetResource(new FileResourceLocation("~/Style/css/Default.css")));
+            config.Resources.Register("detail", new StylesheetResource(new FileResourceLocation("~/Style/css/Detail.css")));
         }
     }
 }

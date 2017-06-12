@@ -38,6 +38,8 @@
         <dot:ContentPlaceHolder ID="MainContent" />
     </div>
 
+    <dot:ContentPlaceHolder ID="ScriptContent">
+    </dot:ContentPlaceHolder>
 </body>
 </html>
 
