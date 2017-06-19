@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DotVVM.Framework.Controls;
 using DotVVM.Framework.ViewModel;
-using OrderManagementApp.DTO;
+using OrderManagementApp.Model;
 using OrderManagementApp.Services;
 
 namespace OrderManagementApp.ViewModels
@@ -24,7 +24,7 @@ namespace OrderManagementApp.ViewModels
             {
 	            PagingOptions =
 	            {
-	                PageSize = 20
+	                PageSize = 10
 	            },
 	            SortingOptions =
 	            {
@@ -37,8 +37,8 @@ namespace OrderManagementApp.ViewModels
 
 	    public override Task PreRender()
 	    {
-IQueryable<OrderListDTO> orderListDtos = orderService.GetOrdersQuery();
-this.Orders.LoadFromQueryable(orderListDtos);
+            IQueryable<OrderListDTO> orderListDtos = orderService.GetOrdersQuery();
+            this.Orders.LoadFromQueryable(orderListDtos);
 
 	        return base.PreRender();
 	    }

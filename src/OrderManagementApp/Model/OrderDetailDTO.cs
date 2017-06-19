@@ -1,22 +1,20 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace OrderManagementApp.Model
 {
-    public class Order
+    public class OrderDetailDTO
     {
-
         public int Id { get; set; }
-
         public DateTime CreatedDate { get; set; }
 
-        [StringLength(100)]
+        [Required(ErrorMessage = "The E-mail Address field is required!")]
+        [EmailAddress(ErrorMessage = "The E-mail Address format is not valid!")]
         public string ContactEmail { get; set; }
 
         public decimal TotalPrice { get; set; }
 
-        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
-
+        public List<OrderItemDetailDTO> OrderItems { get; set; }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DotVVM.Framework.ViewModel;
-using OrderManagementApp.DTO;
+using OrderManagementApp.Model;
 using OrderManagementApp.Services;
 
 namespace OrderManagementApp.ViewModels
@@ -51,11 +51,11 @@ namespace OrderManagementApp.ViewModels
 	        RecalculatePrice();
 	    }
 
-	    public void RemoveOrderItem(OrderItemDetailDTO item)
-	    {
+        public void RemoveOrderItem(OrderItemDetailDTO item)
+        {
 	        EditedOrder.OrderItems.Remove(item);
 	        RecalculatePrice();
-	    }
+        }
 
 	    public void RecalculatePrice()
 	    {

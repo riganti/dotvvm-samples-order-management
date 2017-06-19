@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OrderManagementApp.DTO
+namespace OrderManagementApp.Model
 {
     public class OrderListDTO
     {

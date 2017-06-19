@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using OrderManagementApp.DTO;
 using OrderManagementApp.Model;
+using OrderManagementApp.Database;
 
 namespace OrderManagementApp.Services
 {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace OrderManagementApp.DTO
+namespace OrderManagementApp.Model
 {
     public class OrderItemDetailDTO
     {

@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace OrderManagementApp.Model
+namespace OrderManagementApp.Database
 {
     public class AppDbContext : DbContext
     {

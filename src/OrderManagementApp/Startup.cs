@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using OrderManagementApp.Model;
+using OrderManagementApp.Database;
 using OrderManagementApp.Services;
 
 namespace OrderManagementApp

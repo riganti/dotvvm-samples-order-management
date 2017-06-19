@@ -1,4 +1,4 @@
-namespace OrderManagementApp.DTO
+namespace OrderManagementApp.Model
 {
     public class ProductListDTO
     {

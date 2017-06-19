@@ -1,4 +1,4 @@
-﻿namespace OrderManagementApp.Model
+﻿namespace OrderManagementApp.Database
 {
     public class OrderItem
     {

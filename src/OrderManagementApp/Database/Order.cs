@@ -1,17 +1,20 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace OrderManagementApp.Model
+namespace OrderManagementApp.Database
 {
-    public class Product
+    public class Order
     {
 
         public int Id { get; set; }
 
-        [StringLength(100)]
-        public string Name { get; set; }
+        public DateTime CreatedDate { get; set; }
 
-        public decimal UnitPrice { get; set; }
+        [StringLength(100)]
+        public string ContactEmail { get; set; }
+
+        public decimal TotalPrice { get; set; }
 
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 
