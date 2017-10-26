@@ -18,7 +18,7 @@ namespace OrderManagementApp
         private void ConfigureRoutes(DotvvmConfiguration config, string applicationPath)
         {
             config.RouteTable.Add("Default", "", "Views/Default.dothtml");
-            config.RouteTable.Add("OrderDetail", "order/{id}", "Views/OrderDetail.dothtml");
+            config.RouteTable.Add("OrderDetail", "order/{id?}", "Views/OrderDetail.dothtml");
 
             // Uncomment the following line to auto-register all dothtml files in the Views folder
             // config.RouteTable.AutoDiscoverRoutes(new DefaultRouteStrategy(config));    
@@ -32,8 +32,7 @@ namespace OrderManagementApp
         private void ConfigureResources(DotvvmConfiguration config, string applicationPath)
         {
             // register custom resources and adjust paths to the built-in resources
-            config.Resources.Register("default", new StylesheetResource(new FileResourceLocation("~/Style/css/Default.css")));
-            config.Resources.Register("detail", new StylesheetResource(new FileResourceLocation("~/Style/css/Detail.css")));
+            config.Resources.Register("site", new StylesheetResource(new FileResourceLocation("~/Style/css/all.css")));
         }
     }
 }

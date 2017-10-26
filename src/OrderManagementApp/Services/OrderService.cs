@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using OrderManagementApp.Model;
 using OrderManagementApp.Database;
@@ -49,7 +50,16 @@ namespace OrderManagementApp.Services
 
         public void SaveOrderDetail(OrderDetailDTO data)
         {
-            var order = dbContext.Orders.Include("OrderItems").Single(o => o.Id == data.Id);
+            // get or create order
+            var order = dbContext.Orders.Include("OrderItems").SingleOrDefault(o => o.Id == data.Id);
+            if (order == null)
+            {
+                order = new Order()
+                {
+                    CreatedDate = DateTime.UtcNow
+                };
+                dbContext.Orders.Add(order);
+            }
 
             // update order items
             order.OrderItems.Clear();

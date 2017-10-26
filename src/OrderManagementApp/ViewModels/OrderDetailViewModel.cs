@@ -21,9 +21,14 @@ namespace OrderManagementApp.ViewModels
 	    }
 
 
-	    public int EditedOrderId => Convert.ToInt32(Context.Parameters["id"]);
+        [FromRoute("Id")]
+	    public int EditedOrderId { get; set; }
+
+	    public bool IsNew => EditedOrderId == 0;
 
 	    public OrderDetailDTO EditedOrder { get; set; }
+
+
 
         [Bind(Direction.ServerToClientFirstRequest)]
 	    public List<ProductListDTO> Products => productService.GetProducts();
@@ -33,7 +38,17 @@ namespace OrderManagementApp.ViewModels
 	    {
 	        if (!Context.IsPostBack)
 	        {
-	            EditedOrder = orderService.GetOrderDetail(EditedOrderId);
+	            if (!IsNew)
+	            {
+	                EditedOrder = orderService.GetOrderDetail(EditedOrderId);
+	            }
+	            else
+	            {
+	                EditedOrder = new OrderDetailDTO()
+	                {
+	                    OrderItems = new List<OrderItemDetailDTO>()
+	                };
+	            }
 	        }
 
 	        return base.PreRender();

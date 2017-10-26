@@ -8,8 +8,6 @@
 .form {
     .form-group {
         > div {
-            display: inline-block;
-
             p {
                 color: $color-main;
             }
@@ -49,6 +47,10 @@
 }
 
 select, input {
-    border: 1px solid $color-main !important;
+
+    &:not(.has-error) {
+        border: 1px solid $color-main;
+    }
+
     color: $color-main !important;
 }

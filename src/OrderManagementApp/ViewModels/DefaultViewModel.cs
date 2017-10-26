@@ -37,8 +37,8 @@ namespace OrderManagementApp.ViewModels
 
 	    public override Task PreRender()
 	    {
-            IQueryable<OrderListDTO> orderListDtos = orderService.GetOrdersQuery();
-            this.Orders.LoadFromQueryable(orderListDtos);
+            IQueryable<OrderListDTO> orders = orderService.GetOrdersQuery();
+            this.Orders.LoadFromQueryable(orders);
 
 	        return base.PreRender();
 	    }

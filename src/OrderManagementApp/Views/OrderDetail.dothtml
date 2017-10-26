@@ -12,13 +12,14 @@
             </h1>
 
             <form class="form" DataContext="{value: EditedOrder}" Validator.InvalidCssClass="has-error">
-                <div class="form-group">
+                
+                <div class="form-group" Visible="{value: !_parent.IsNew}">
                     <label class="control-label">Order ID</label>
                     <div>
                         <p class="form-control-static">{{value: Id}}</p>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group" Visible="{value: !_parent.IsNew}">
                     <label class="control-label">Created Date</label>
                     <div>
                         <p class="form-control-static">
@@ -32,6 +33,8 @@
                         <dot:TextBox class="form-control" Text="{value: ContactEmail}" />
                     </div>
                 </div>
+
+                <hr />
 
                 <div class="form-group">
                     <label class="control-label">Order Items</label>
@@ -79,6 +82,8 @@
                                 Validation.Enabled="false" />
                 </div>
 
+                <hr />
+
                 <div class="form-group">
                     <label class="control-label">Total Price</label>
                     <div>
@@ -89,7 +94,7 @@
                 </div>
 
                 <div class="form-group text-danger">
-                    <dot:ValidationSummary Validation.Target="{value: _this}" />
+                    <dot:ValidationSummary Validation.Target="{value: _this}" IncludeErrorsFromChildren="true" />
                 </div>
 
             </form>
@@ -103,8 +108,4 @@
         </div>
     </div>
 
-</dot:Content>
-
-<dot:Content ContentPlaceHolderID="ScriptContent" RenderSettings.Mode="Server">
-    <dot:RequiredResource Name="detail" />
 </dot:Content>
