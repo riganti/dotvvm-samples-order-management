@@ -14,12 +14,6 @@
             <form class="form" DataContext="{value: EditedOrder}" Validator.InvalidCssClass="has-error">
                 
                 <div class="form-group" Visible="{value: !_parent.IsNew}">
-                    <label class="control-label">Order ID</label>
-                    <div>
-                        <p class="form-control-static">{{value: Id}}</p>
-                    </div>
-                </div>
-                <div class="form-group" Visible="{value: !_parent.IsNew}">
                     <label class="control-label">Created Date</label>
                     <div>
                         <p class="form-control-static">
@@ -49,7 +43,7 @@
                                 <div class="form-group">
                                     <dot:ComboBox DataSource="{value: _root.Products}" 
                                                   SelectedValue="{value: ProductId}" 
-                                                  DisplayMember="Name" 
+                                                  DisplayMember="DisplayText" 
                                                   ValueMember="Id"
                                                   SelectionChanged="{command: _root.RecalculatePrice()}"
                                                   Validation.Enabled="false"
@@ -59,12 +53,15 @@
                                     <dot:TextBox Text="{value: Quantity}" 
                                                  Changed="{command: _root.RecalculatePrice()}"
                                                  Validation.Enabled="false"
-                                                 class="form-control"/>
+                                                 class="form-control number"/>
                                 </div>
                                 <div class="form-group">
-                                    <dot:Button Text="Remove" class="btn btn-default"
+                                    <dot:LinkButton class="btn btn-default"
                                                 Click="{command: _root.RemoveOrderItem(_this)}" 
-                                                Validation.Enabled="false" />
+                                                Validation.Enabled="false">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                        Remove
+                                    </dot:LinkButton>
                                 </div>
 
                             </div>
@@ -77,9 +74,12 @@
                 </dot:Repeater>
 
                 <div class="form-group">
-                    <dot:Button Text="Add New Item" class="btn btn-default"
+                    <dot:LinkButton class="btn btn-default"
                                 Click="{command: _root.AddOrderItem()}"
-                                Validation.Enabled="false" />
+                                Validation.Enabled="false">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        Add Order Item
+                    </dot:LinkButton>
                 </div>
 
                 <hr />
@@ -87,7 +87,7 @@
                 <div class="form-group">
                     <label class="control-label">Total Price</label>
                     <div>
-                        <p class="form-control-static">
+                        <p class="form-control-static big">
                             <dot:Literal Text="{value: TotalPrice}" FormatString="c" />
                         </p>
                     </div>
@@ -102,7 +102,8 @@
             <div>
                 <dot:Button Text="Save Changes" class="btn btn-primary"
                             Click="{command: _root.SaveChanges()}" />
-                <dot:RouteLink Text="Cancel" RouteName="Default" class="btn btn-default" />
+                <dot:RouteLink Text="Cancel" RouteName="Default" 
+                               class="btn btn-default" />
             </div>
 
         </div>

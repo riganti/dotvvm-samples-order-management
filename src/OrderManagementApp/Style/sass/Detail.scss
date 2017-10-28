@@ -10,12 +10,20 @@
         > div {
             p {
                 color: $color-main;
+
+                &.big {
+                    font-size: 200%;
+                }
             }
         }
 
         .control-label {
             color: darken($color-main, 15%) !important;
             padding-right: 1rem;
+        }
+
+        .number {
+            width: 80px;
         }
     }
 }

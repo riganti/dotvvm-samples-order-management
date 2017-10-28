@@ -35,6 +35,8 @@
   .table tbody tr:hover {
     background-color: #c8dcf0;
     transition: all .3s; }
+  .table tbody tr.vip-order {
+    background-color: lightsalmon; }
 
 .container:first-child {
   width: 100%;
@@ -42,10 +44,15 @@
 
 .form .form-group > div p {
   color: #3176bb; }
+  .form .form-group > div p.big {
+    font-size: 200%; }
 
 .form .form-group .control-label {
   color: #21507e !important;
   padding-right: 1rem; }
+
+.form .form-group .number {
+  width: 80px; }
 
 .btn-default {
   display: inline-block;
