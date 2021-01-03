@@ -28,7 +28,7 @@ namespace OrderManagementApp.ViewModels
 	            },
 	            SortingOptions =
 	            {
-	                SortExpression = "CreatedDate",
+	                SortExpression = nameof(OrderListDTO.CreatedDate),
 	                SortDescending = true
 	            }
             };
@@ -37,10 +37,13 @@ namespace OrderManagementApp.ViewModels
 
 	    public override Task PreRender()
 	    {
-            IQueryable<OrderListDTO> orders = orderService.GetOrdersQuery();
-            this.Orders.LoadFromQueryable(orders);
+            if (this.Orders.IsRefreshRequired)
+            {
+                IQueryable<OrderListDTO> orders = orderService.GetOrdersQuery();
+                this.Orders.LoadFromQueryable(orders);
+            }
 
-	        return base.PreRender();
+            return base.PreRender();
 	    }
 	}
 }

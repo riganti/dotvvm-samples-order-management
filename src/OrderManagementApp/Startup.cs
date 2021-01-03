@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using OrderManagementApp.Database;
 using OrderManagementApp.Services;
 
@@ -22,10 +21,7 @@ namespace OrderManagementApp
             services.AddAuthorization();
             services.AddWebEncoders();
 
-            services.AddDotVVM(options =>
-            {
-                options.AddDefaultTempStorages("Temp");
-            });
+            services.AddDotVVM<DotvvmStartup>();
 
             services.AddDbContext<AppDbContext>();
 
@@ -34,10 +30,8 @@ namespace OrderManagementApp
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            loggerFactory.AddConsole();
-
             // use DotVVM
             var dotvvmConfiguration = app.UseDotVVM<DotvvmStartup>(env.ContentRootPath);
 

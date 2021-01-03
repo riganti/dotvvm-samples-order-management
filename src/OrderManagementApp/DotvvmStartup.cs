@@ -2,10 +2,11 @@ using DotVVM.Framework;
 using DotVVM.Framework.Configuration;
 using DotVVM.Framework.ResourceManagement;
 using DotVVM.Framework.Routing;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace OrderManagementApp
 {
-    public class DotvvmStartup : IDotvvmStartup
+    public class DotvvmStartup : IDotvvmStartup, IDotvvmServiceConfigurator
     {
         // For more information about this class, visit https://dotvvm.com/docs/tutorials/basics-project-structure
         public void Configure(DotvvmConfiguration config, string applicationPath)
@@ -33,6 +34,11 @@ namespace OrderManagementApp
         {
             // register custom resources and adjust paths to the built-in resources
             config.Resources.Register("site", new StylesheetResource(new FileResourceLocation("~/Style/css/all.css")));
+        }
+
+        public void ConfigureServices(IDotvvmServiceCollection options)
+        {
+            options.AddDefaultTempStorages("Temp");
         }
     }
 }
