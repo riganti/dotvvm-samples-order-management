@@ -10,7 +10,7 @@ namespace OrderManagementApp.Database
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS; Initial Catalog=DotvvmSample_Orders; Integrated Security=true");
+                optionsBuilder.UseSqlite("Data Source=db.sqlite");
             }
         }
 
