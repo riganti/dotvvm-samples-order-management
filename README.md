@@ -13,16 +13,11 @@ This application shows a simple CRUD application implemented in [DotVVM](https:/
 or 
 `git clone https://github.com/riganti/dotvvm-samples-order-management.git`
 
-2. Open `src/FlightFinder.sln` 
+2. Open `src/OrderManagementApp.sln` 
 ![Open the solution file](https://raw.githubusercontent.com/riganti/dotvvm-samples-order-management/master/images/om002.png)
 
-3. Right-click the `FlightFinder.Api` project and select **View > View in Browser**
-![View FlightFinder.Api in Browser](https://raw.githubusercontent.com/riganti/dotvvm-samples-order-management/master/images/om003.png)
-
-4. You will see HTTP 404, but it is OK – the `FlightFinder.Api` project is a REST API without a home page – it only provides data to the app itself
-
-5. Right-click `FlightFinder.Web` project and select **View > View in Browser**
-![View FlightFinder.Web in Browser](https://raw.githubusercontent.com/riganti/dotvvm-samples-order-management/master/images/om004.png)
+3. Right-click the `OrderManagementApp` project and select **View > View in Browser**
+![View OrderManagementApp in Browser](https://raw.githubusercontent.com/riganti/dotvvm-samples-order-management/master/images/om003.png)
 
 ### What you can learn in the sample
 
@@ -40,5 +35,3 @@ or
 * [DotVVM GitHub](https://github.com/riganti/dotvvm)
 * [Twitter @dotvvm](https://twitter.com/dotvvm)
 * [Samples](https://www.dotvvm.com/samples)
-
-
