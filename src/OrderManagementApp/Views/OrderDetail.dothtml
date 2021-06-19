@@ -11,20 +11,25 @@
                 Order Details
             </h1>
 
-            <form class="form" DataContext="{value: EditedOrder}" Validator.InvalidCssClass="has-error">
+            <form class="form" 
+                  DataContext="{value: EditedOrder}" 
+                  Validator.InvalidCssClass="has-error">
                 
                 <div class="form-group" Visible="{value: !_parent.IsNew}">
                     <label class="control-label">Created Date</label>
                     <div>
                         <p class="form-control-static">
-                            <dot:Literal Text="{value: CreatedDate}" FormatString="d" />
+                            <dot:Literal Text="{value: CreatedDate}" 
+                                         FormatString="d" />
                         </p>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label class="control-label">E-mail Address</label>
                     <div Validator.Value="{value: ContactEmail}">
-                        <dot:TextBox class="form-control" Text="{value: ContactEmail}" />
+                        <dot:TextBox class="form-control" 
+                                     Text="{value: ContactEmail}" />
                     </div>
                 </div>
 
@@ -75,8 +80,8 @@
 
                 <div class="form-group">
                     <dot:LinkButton class="btn btn-default"
-                                Click="{command: _root.AddOrderItem()}"
-                                Validation.Enabled="false">
+                                    Click="{command: _root.AddOrderItem()}"
+                                    Validation.Enabled="false">
                         <span class="glyphicon glyphicon-plus"></span>
                         Add Order Item
                     </dot:LinkButton>
@@ -88,21 +93,26 @@
                     <label class="control-label">Total Price</label>
                     <div>
                         <p class="form-control-static big">
-                            <dot:Literal Text="{value: TotalPrice}" FormatString="c" />
+                            <dot:Literal Text="{value: TotalPrice}" 
+                                         FormatString="c" />
                         </p>
                     </div>
                 </div>
 
                 <div class="form-group text-danger">
-                    <dot:ValidationSummary Validation.Target="{value: _this}" IncludeErrorsFromChildren="true" />
+                    <dot:ValidationSummary Validation.Target="{value: _this}" 
+                                           IncludeErrorsFromChildren="true" />
                 </div>
 
             </form>
 
             <div>
-                <dot:Button Text="Save Changes" class="btn btn-primary"
+                <dot:Button Text="Save Changes" 
+                            class="btn btn-primary"
                             Click="{command: _root.SaveChanges()}" />
-                <dot:RouteLink Text="Cancel" RouteName="Default" 
+
+                <dot:RouteLink Text="Cancel" 
+                               RouteName="Default" 
                                class="btn btn-default" />
             </div>
 

@@ -54,7 +54,6 @@ namespace OrderManagementApp.ViewModels
 	        return base.PreRender();
 	    }
 
-
 	    public void AddOrderItem()
 	    {
 	        EditedOrder.OrderItems.Add(new OrderItemDetailDTO()
@@ -76,7 +75,6 @@ namespace OrderManagementApp.ViewModels
 	    {
 	        orderService.RecalculateOrderTotalPrice(EditedOrder);
         }
-
 
         public void SaveChanges()
 	    {
