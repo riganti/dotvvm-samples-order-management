@@ -101,7 +101,8 @@
 
                 <div class="form-group text-danger">
                     <dot:ValidationSummary Validation.Target="{value: _this}" 
-                                           IncludeErrorsFromChildren="true" />
+                                           IncludeErrorsFromChildren="true"
+                                           IncludeErrorsFromTarget="true"/>
                 </div>
 
             </form>

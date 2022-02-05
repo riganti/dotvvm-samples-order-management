@@ -33,6 +33,7 @@ namespace OrderManagementApp
         public void ConfigureServices(IDotvvmServiceCollection options)
         {
             options.AddDefaultTempStorages("Temp");
+            options.AddHotReload();
         }
     }
 }
