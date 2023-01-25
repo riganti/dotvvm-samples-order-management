@@ -25,7 +25,7 @@ namespace OrderManagementApp.Services
                 CreatedDate = o.CreatedDate,
                 ContactEmail = o.ContactEmail,
                 ItemsCount = o.OrderItems.Count(),
-                TotalPrice = o.TotalPrice
+                TotalPrice = o.TotalPrice,
             });
         }
 
@@ -95,7 +95,7 @@ namespace OrderManagementApp.Services
                 .ToList();
 
             // calculate the price
-            var totalPrice = 0m;
+            var totalPrice = 0.0;
             foreach (var item in data.OrderItems)
             {
                 var product = products.Single(p => p.Id == item.ProductId);

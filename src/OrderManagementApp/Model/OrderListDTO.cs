@@ -11,7 +11,7 @@ namespace OrderManagementApp.Model
 
         public string ContactEmail { get; set; }
 
-        public decimal TotalPrice { get; set; }
+        public double TotalPrice { get; set; }
 
         public int ItemsCount { get; set; }
 

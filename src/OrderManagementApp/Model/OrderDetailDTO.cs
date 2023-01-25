@@ -13,7 +13,7 @@ namespace OrderManagementApp.Model
         [EmailAddress(ErrorMessage = "The E-mail Address format is not valid!")]
         public string ContactEmail { get; set; }
 
-        public decimal TotalPrice { get; set; }
+        public double TotalPrice { get; set; }
 
         public List<OrderItemDetailDTO> OrderItems { get; set; } 
 

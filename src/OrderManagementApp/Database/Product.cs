@@ -11,7 +11,7 @@ namespace OrderManagementApp.Database
         [StringLength(100)]
         public string Name { get; set; }
 
-        public decimal UnitPrice { get; set; }
+        public double UnitPrice { get; set; }
 
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 

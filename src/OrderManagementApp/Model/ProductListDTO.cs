@@ -7,7 +7,7 @@ namespace OrderManagementApp.Model
 
         public string Name { get; set; }
 
-        public decimal UnitPrice { get; set; }
+        public double UnitPrice { get; set; }
 
         public string DisplayText => $"{Name} ({UnitPrice:c})";
 

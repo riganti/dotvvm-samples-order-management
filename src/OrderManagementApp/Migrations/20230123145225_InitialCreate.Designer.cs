@@ -6,17 +6,18 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OrderManagementApp.Database;
 
+#nullable disable
+
 namespace OrderManagementApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210105182103_InitialCreate")]
+    [Migration("20230123145225_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("ProductVersion", "5.0.0");
+            modelBuilder.HasAnnotation("ProductVersion", "6.0.0");
 
             modelBuilder.Entity("OrderManagementApp.Database.Order", b =>
                 {
@@ -31,8 +32,8 @@ namespace OrderManagementApp.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("TotalPrice")
+                        .HasColumnType("REAL");
 
                     b.HasKey("Id");
 
@@ -73,8 +74,8 @@ namespace OrderManagementApp.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("UnitPrice")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("UnitPrice")
+                        .HasColumnType("REAL");
 
                     b.HasKey("Id");
 
